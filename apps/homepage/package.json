@@ -1,0 +1,29 @@
+{
+    "name": "@ticketapp/homepage",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "next dev -p 4205",
+        "build": "next build",
+        "start": "next start -p 4205",
+        "lint": "next lint",
+        "type-check": "tsc --noEmit",
+        "clean": "rimraf .next out"
+    },
+    "dependencies": {
+        "@ticketapp/ui": "workspace:*",
+        "@ticketapp/utils": "workspace:*",
+        "next": "^15.3.4",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.19.9",
+        "@types/react": "^19.2.2",
+        "@types/react-dom": "^19.2.2",
+        "typescript": "^5.9.2",
+        "tailwindcss": "^4.0.0",
+        "@tailwindcss/postcss": "^4.1.16"
+    }
+}

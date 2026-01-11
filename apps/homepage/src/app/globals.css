@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+@import '@ticketapp/ui/styles/tailwind.css';
+
+/* Custom global styles */
+body {
+    font-family: var(--font-family-base), system-ui, -apple-system, sans-serif;
+    background-color: var(--color-neutral-white);
+    color: var(--color-neutral-black);
+}

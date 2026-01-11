@@ -1,0 +1,135 @@
+/**
+ * Design Tokens - Complete Design System
+ * Generated from Figma design system
+ * https://www.figma.com/design/rvRPrJEvNKe8RIa1WP0u6J/Design-System
+ * https://www.figma.com/design/pKvUx38RtgsbIP2Jxex80t/ticketapp---design-tokens---wip-?node-id=23245-68799
+ */
+
+:root {
+  /* ========================================
+       COLORS
+       ======================================== */
+
+  /* Primary Colors - Green palette */
+  --color-primary-100: #c8f0b4;
+  --color-primary-200: #beeba0;
+  --color-primary-300: #a0eb78;
+  --color-primary-400: #6ed22d;
+  --color-primary-500: #50b40a;
+  --color-primary-600: #328200;
+  --color-primary-700: #0f6446;
+  --color-primary-800: #0a412d;
+  --color-primary-900: #052819;
+
+  /* Secondary Colors - Blue palette */
+  --color-secondary-20: #f5f7fa;
+  --color-secondary-40: #e6ecf3;
+  --color-secondary-80: #dee5ed;
+  --color-secondary-100: #b8cce0;
+  --color-secondary-200: #94b4d4;
+  --color-secondary-300: #698daf;
+  --color-secondary-400: #478cd1;
+  --color-secondary-500: #3473b2;
+  --color-secondary-800: #113e73;
+
+  /* Neutral Colors - Grayscale */
+  --color-neutral-white: #ffffff;
+  --color-neutral-50: #e3e6e8;
+  --color-neutral-100: #c7ccd1;
+  --color-neutral-200: #a9b8c6;
+  --color-neutral-300: #73808c;
+  --color-neutral-500: #3d4d5c;
+  --color-neutral-black: #001f3d;
+
+  /* System Colors - Functional */
+  --color-system-link: #0057da;
+  --color-system-alert: #eb5757;
+  --color-system-success: #4eb40c;
+  --color-system-comments: #5d00f4;
+
+  /* Overlay/Glass effect tokens (semi-transparent) */
+  --overlay-white-10: rgba(255, 255, 255, 0.1);
+  --overlay-white-20: rgba(255, 255, 255, 0.2);
+  --overlay-white-30: rgba(255, 255, 255, 0.3);
+  --overlay-white-50: rgba(255, 255, 255, 0.5);
+  --overlay-black-10: rgba(0, 0, 0, 0.1);
+  --overlay-black-20: rgba(0, 0, 0, 0.2);
+
+  /* Backdrop overlay for dialogs and drawers */
+  --overlay-backdrop: rgba(10, 64, 46, 0.9);
+
+  /* ========================================
+       SPACING & LAYOUT
+       ======================================== */
+
+  /* Gap tokens */
+  --gap: 12px;
+  --gap-4: 4px;
+  --gap-16: 16px;
+
+  /* Horizontal Padding */
+  --h-padding: 24px;
+  --h-padding-12: 12px;
+  --h-padding-16: 16px;
+  --h-padding-20: 20px;
+
+  /* Vertical Padding */
+  --v-padding-32: 32px;
+  --v-padding-36: 36px;
+
+  /* Generic Spacing (legacy) */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+
+  /* ========================================
+       BORDER RADIUS
+       ======================================== */
+
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 24px;
+  --border-radius-full: 9999px;
+
+  /* ========================================
+       SHADOWS
+       ======================================== */
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+  /* ========================================
+       SIZES
+       ======================================== */
+
+  /* Generic size */
+  --size: 52px;
+
+  /* Button Sizes */
+  --button-size-sm: 36px;
+  --button-size-md: 52px;
+  --button-size-lg: 60px;
+  --button-size-xxlg: 68px;
+
+  /* ========================================
+       TYPOGRAPHY
+       ======================================== */
+
+  /* Font Family */
+  --font-family-base: "Lato", sans-serif;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-body-sm: 20px;
+  --line-height-body-md: 28px;
+}
