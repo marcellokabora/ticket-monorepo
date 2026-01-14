@@ -286,7 +286,7 @@
         return;
       }
 
-      // Check if this airport has airline restrictions
+      // Always show airline picker after airport selection
       if (
         result.restrictedToAirlines &&
         result.restrictedToAirlines.length > 0
@@ -298,7 +298,7 @@
         isDeparturePriceLoading = false;
         isPricingLoading = false;
       } else {
-        // No restrictions - set airport directly
+        // Fallback: no airlines available - set airport directly
         booking.departureAirport = airport;
         booking.departureAirline = null;
         booking.departurePrice = result.price;
@@ -381,7 +381,7 @@
         return;
       }
 
-      // Check if this airport has airline restrictions
+      // Always show airline picker after airport selection
       if (
         result.restrictedToAirlines &&
         result.restrictedToAirlines.length > 0
@@ -393,7 +393,7 @@
         isReturnPriceLoading = false;
         isPricingLoading = false;
       } else {
-        // No restrictions - set airport directly
+        // Fallback: no airlines available - set airport directly
         booking.returnAirport = airport;
         booking.returnAirline = null;
         booking.returnPrice = result.price;

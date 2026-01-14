@@ -3,7 +3,7 @@ import { customElement } from 'lit/decorators.js';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 
 // Inline SVG for better performance and no external dependencies
-const logoSvg = '<svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.656 0H0.0320129L6.33602 5.792C7.29602 6.656 8.51201 7.136 9.79201 7.136H11.04L6.91201 3.2H8.73602C9.24802 3.2 9.69601 3.424 10.08 3.744L13.184 6.56C13.6 6.944 14.144 7.136 14.688 7.136H15.616C16.544 7.136 17.536 7.36 17.536 8C17.536 8.64 16.544 8.864 15.616 8.864H14.688C14.144 8.864 13.6 9.088 13.184 9.44L10.08 12.256C9.69601 12.576 9.21602 12.768 8.73602 12.768H6.91201L11.04 8.864H9.79201C8.51201 8.864 7.29602 9.344 6.33602 10.208L0.0320129 16H10.656C11.328 16 12 15.744 12.512 15.264L20 8.384C20.224 8.16 20.224 7.808 20 7.584L12.512 0.704C12 0.256 11.36 0 10.656 0Z" fill="#50B40A"/><path d="M6.33601 5.792C7.29601 6.656 8.512 7.136 9.792 7.136H11.04L6.912 3.2H8.73601C9.15201 3.2 9.53601 3.36 9.85601 3.584L5.792 0H0L6.304 5.792H6.33601Z" fill="#6ED22D"/><path d="M10.048 12.256C9.664 12.576 9.184 12.768 8.704 12.768H6.88L11.008 8.864H9.76C8.48 8.864 7.264 9.344 6.304 10.208L0 16H5.888" fill="#6ED22D"/></svg>';
+const logoSvg = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="#50B40A"/><path d="M10 3.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V9l8 5v2l-8-2.5V19l2 1.5V22l-3.5-1-3.5 1v-1.5L10 19v-5.5l-8 2.5v-2l8-5V3.5z" fill="#6ED22D" opacity="0.6"/></svg>';
 
 /**
  * ticketapp logo component with text and icon
@@ -87,7 +87,7 @@ export class LitLogo extends LitElement {
   render() {
     return html`
       <div class="logo-text" data-name="Text" data-node-id="30:416">
-        ticketapp
+        Flight Ticket
       </div>
       <div class="logo-icon" data-name="Icon" data-node-id="30:353">
         ${unsafeSVG(logoSvg)}

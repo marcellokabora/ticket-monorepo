@@ -258,6 +258,25 @@
         )
   );
 
+  /**
+   * Get airline logo URL from IATA code
+   * Uses a public CDN service that provides airline logos
+   */
+  function getAirlineLogo(iataCode: string): string {
+    return `https://images.kiwi.com/airlines/64/${iataCode}.png`;
+  }
+
+  /**
+   * Handle image load error - show IATA code as fallback
+   */
+  function handleImageError(e: Event, iataCode: string) {
+    const target = e.target as HTMLImageElement;
+    target.style.display = "none";
+    if (target.parentElement) {
+      target.parentElement.innerHTML = `<span class="text-[10px] font-semibold text-secondary-500">${iataCode}</span>`;
+    }
+  }
+
   // Flights data (mock data)
   const flights = [
     {
@@ -544,11 +563,12 @@
                   <div
                     class="w-6 h-6 bg-neutral-white rounded flex items-center justify-center overflow-hidden"
                   >
-                    <lit-icon
-                      icon="mdi:airplane"
-                      size="16"
-                      class="text-secondary-300"
-                    ></lit-icon>
+                    <img
+                      src={getAirlineLogo(airline.code)}
+                      alt={airline.name}
+                      class="w-full h-full object-contain"
+                      onerror={(e) => handleImageError(e, airline.code)}
+                    />
                   </div>
                   <span class="flex-1 text-base text-neutral-black"
                     >{airline.name}</span
@@ -582,11 +602,12 @@
                   <div
                     class="w-6 h-6 bg-neutral-white rounded flex items-center justify-center overflow-hidden"
                   >
-                    <lit-icon
-                      icon="mdi:airplane"
-                      size="16"
-                      class="text-secondary-300"
-                    ></lit-icon>
+                    <img
+                      src={getAirlineLogo(airline.code)}
+                      alt={airline.name}
+                      class="w-full h-full object-contain"
+                      onerror={(e) => handleImageError(e, airline.code)}
+                    />
                   </div>
                   <span class="flex-1 text-base text-neutral-black"
                     >{airline.name}</span

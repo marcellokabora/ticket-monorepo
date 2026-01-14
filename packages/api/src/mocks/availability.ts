@@ -50,7 +50,27 @@ const AIRPORT_BASE_PRICES: Record<string, { adult: number; child: number }> = {
 const DEFAULT_PRICING = { adult: 29.0, child: 14.5 };
 
 /**
- * Some airports have airline restrictions
+ * Common airlines available at most airports
+ */
+const COMMON_AIRLINES = [
+    { iata: 'AA', name: 'American Airlines' },
+    { iata: 'BA', name: 'British Airways' },
+    { iata: 'DL', name: 'Delta Air Lines' },
+    { iata: 'UA', name: 'United Airlines' },
+    { iata: 'LH', name: 'Lufthansa' },
+    { iata: 'AF', name: 'Air France' },
+    { iata: 'KL', name: 'KLM Royal Dutch Airlines' },
+    { iata: 'IB', name: 'Iberia' },
+    { iata: 'VY', name: 'Vueling' },
+    { iata: 'FR', name: 'Ryanair' },
+    { iata: 'U2', name: 'easyJet' },
+    { iata: 'EK', name: 'Emirates' },
+    { iata: 'QR', name: 'Qatar Airways' },
+    { iata: 'TK', name: 'Turkish Airlines' },
+];
+
+/**
+ * Some airports have airline restrictions (require specific airlines)
  */
 const AIRLINE_RESTRICTED_AIRPORTS: Record<
     string,
@@ -109,8 +129,10 @@ export function getMockAvailability(
     const localAdultPrice = convertPrice(basePricing.adult, currencyCode);
     const localChildPrice = convertPrice(basePricing.child, currencyCode);
 
-    // Check for airline restrictions
+    // Check for airline restrictions - if restricted, use only those airlines
+    // Otherwise, return all common airlines (always require airline selection)
     const restrictedAirlines = AIRLINE_RESTRICTED_AIRPORTS[code];
+    const availableAirlines = restrictedAirlines || COMMON_AIRLINES;
 
     return {
         available: true,
@@ -142,8 +164,9 @@ export function getMockAvailability(
                 vat_number: 'EU123456789',
             },
         },
-        available_only_via_airlines: restrictedAirlines ? true : undefined,
-        restricted_to_airlines: restrictedAirlines?.map((a) => ({
+        // Always indicate airlines are required (user must select one)
+        available_only_via_airlines: true,
+        restricted_to_airlines: availableAirlines.map((a) => ({
             iata: a.iata,
             name: a.name,
         })),
